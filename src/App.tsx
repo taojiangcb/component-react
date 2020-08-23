@@ -2,12 +2,21 @@
 
 import React from 'react';
 import Button, { ButtonSize, ButtonType } from './components/Button/button';
+import MenuItem from './components/Menu/menuItem';
+import Menu from './components/Menu/menu';
 
 export const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <Button onClick={e=>{console.log(123)}}>Hello Button</Button>
+
+        <Menu style={{marginLeft:10}} defaultIndex={0} mode="vertical" >
+          <MenuItem index={1}>cool link</MenuItem>
+          <MenuItem index={2} disabled={true}>cool link1</MenuItem>
+          <MenuItem index={3}>cool link2</MenuItem>
+        </Menu>
+
+        <Button onClick={e => { console.log(123) }}>Hello Button</Button>
         <Button size={ButtonSize.Large}>Large</Button>
         <Button size={ButtonSize.Small}>Small</Button>
         <Button target="_blank" btnType={ButtonType.Link} href="http://www.12306.com">Link Button</Button>
