@@ -16,7 +16,11 @@
     "@babel/preset-react": "^7.6.3",
     "@babel/preset-typescript": "^7.7.2",
     "@babel/runtime": "^7.7.2",
+    "@testing-library/jest-dom": "^5.11.3",
+    "@testing-library/react": "^10.4.9",
+    "@types/jest": "^26.0.10",
     "@types/react-hot-loader": "^4.1.1",
+    "@types/testing-library__jest-dom": "^5.9.2",
     "@types/webpack": "^4.39.3",
     "@typescript-eslint/eslint-plugin": "^2.8.0",
     "@typescript-eslint/parser": "^2.8.0",
@@ -44,6 +48,8 @@
     "html-webpack-externals-plugin": "^3.8.0",
     "html-webpack-plugin": "^3.2.0",
     "interpolate-html-plugin": "^3.0.0",
+    "jest": "^26.4.2",
+    "jest-config": "^26.4.2",
     "json-loader": "^0.5.7",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
@@ -60,6 +66,7 @@
     "style-loader": "0.22.0",
     "terser-webpack-plugin": "1.2.0",
     "thread-loader": "^2.1.3",
+    "ts-jest": "^26.2.0",
     "typescript": "^3.6.4",
     "typescript-eslint": "^0.0.1-alpha.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
@@ -97,7 +104,8 @@
     "build:dev": "rm -fr ./build && webpack --mode development --config ./config/webpack.config.build.dev.js --env=dev",
     "build:test": "rm -fr ./dist && NODE_ENV='production' webpack --mode production --config ./config/webpack.config.production.js --env=test",
     "build:prod": "rm -fr ./dist && NODE_ENV='production' webpack --mode production --config ./config/webpack.config.production.js --env=prod",
-    "dev:rn": "NODE_ENV='production' http-server ./dist"
+    "dev:rn": "NODE_ENV='production' http-server ./dist",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC"

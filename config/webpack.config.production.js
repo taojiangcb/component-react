@@ -34,7 +34,7 @@ const production = merge(baseConf, {
         include: srcRoot,
         use: [
           {
-            loader: 'thread-loader',
+            loader: 'thread-loader',            //开启多进程编译
             options: {
               workers: OS.cpus.length - 1,
             }
@@ -157,6 +157,7 @@ const production = merge(baseConf, {
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
     
+    /**清洗css 文件 */
     new PurgecssPlugin({
       paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true })
     }),

@@ -2,6 +2,7 @@
 import ClassNames from 'classnames';
 import React from 'react';
 
+/** */
 export enum ButtonSize {
   Large = 'lg',
   Small = 'sm'
@@ -14,6 +15,7 @@ export enum ButtonType {
   Link = 'link'
 }
 
+/**基础的属性定义 */
 interface BaseButtonProps {
   className?: string;
   disabled?: boolean;
