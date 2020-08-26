@@ -146,7 +146,7 @@ module.exports = {
 
     // 在js代码中能够使用环境变量(demo: process.env.REACT_APP_ENV === 'dev')
     new webpack.DefinePlugin(env.stringified),
-
+    
     new CopyPlugin([
       { from: publicDir, to: buildDir },
     ]),
