@@ -1,0 +1,8 @@
+/*
+* 为每一种 theme 添加颜色
+*/
+@each $key, $val in $theme-colors {
+  .icon-#{$key} {
+    color: $val;
+  }
+}

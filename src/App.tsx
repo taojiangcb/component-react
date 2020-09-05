@@ -5,15 +5,16 @@ import Button, { ButtonSize, ButtonType } from './components/Button/button';
 import MenuItem from './components/Menu/menuItem';
 import Menu from './components/Menu/menu';
 import SubMenu from './components/Menu/subMenu';
+import Icon from './components/Icon/icon';
 
 export const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-
-        <Menu style={{ marginLeft: 10 }} defaultIndex={0} mode="horizontal" >
-          <MenuItem index={1}>cool link</MenuItem>
-          <MenuItem index={2} disabled={true}>cool link1</MenuItem>
+        <Icon theme="primary" icon="ad" size={30}/>
+        <Menu style={{ marginLeft: 10 }} defaultIndex={0} onSelect={index => alert(`on selected is ${index}`)} >
+          <MenuItem >cool link</MenuItem>
+          <MenuItem disabled={true}>cool link1</MenuItem>
           <SubMenu title='dropdown'>
             <MenuItem>
               dropdown 1
@@ -22,7 +23,7 @@ export const App: React.FC = () => {
               dropdown 2
             </MenuItem>
           </SubMenu>
-          <MenuItem index={3}>cool link2</MenuItem>
+          <MenuItem>cool link2</MenuItem>
         </Menu>
 
         {/* <Button onClick={e => { console.log(123) }}>Hello Button</Button>

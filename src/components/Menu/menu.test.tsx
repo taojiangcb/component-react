@@ -26,6 +26,21 @@ const generateMenu = (props: MenuProps) => {
   )
 }
 
+const createStyleFile = ()=> {
+  const cssFile:string = ` 
+    .viking-submenu {
+      display:none;
+    }
+    .viking-submenu.menu-opened {
+      display:block;
+    }
+  `
+  const style = document.createElement('style')
+  style.type = "text/css";
+  style.innerHTML = cssFile;
+  return style;
+}
+
 let wapper: RenderResult, menuElement: HTMLElement, activeElement: HTMLElement, disabledElement: HTMLElement;
 
 describe('test Menu and MenuItem component', () => {
@@ -49,6 +64,13 @@ describe('test Menu and MenuItem component', () => {
     expect(testProps.onSelect).toHaveBeenCalledWith(2);
   })
   it('should render vertial model when mode is set to vertical', () => {
+  })
+})
 
+let wapper2:RenderResult;
+describe('test menu and MenuItem component is vertical mode',()=> {
+  beforeEach(()=> {
+    wapper2 = render(generateMenu(testVerProps));
+    wapper2.container.append(createStyleFile());
   })
 })

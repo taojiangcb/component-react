@@ -82,6 +82,11 @@
     "yargs-parser": "^16.1.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "@types/react-redux": "^7.1.5",
     "@types/react-router-dom": "^5.1.0",
     "@types/redux": "^3.6.0",
@@ -105,7 +110,8 @@
     "build:test": "rm -fr ./dist && NODE_ENV='production' webpack --mode production --config ./config/webpack.config.production.js --env=test",
     "build:prod": "rm -fr ./dist && NODE_ENV='production' webpack --mode production --config ./config/webpack.config.production.js --env=prod",
     "dev:rn": "NODE_ENV='production' http-server ./dist",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "author": "",
   "license": "ISC"

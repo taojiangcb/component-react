@@ -5,13 +5,13 @@ import MenuItem, { MenuItemProps } from './menuItem';
 import SubMenu from './subMenu';
 
 type MenuMode = 'horizontal' | 'vertical';
-type SelectCallBack = (selectedIndex: number) => void;
+type SelectCallBack = (selectedIndex: number | string) => void;
 
 /**
  * menu的属性类型
  */
 export interface MenuProps {
-  defaultIndex?: number;
+  defaultIndex?: number | string;
   className?: string;
   mode?: MenuMode;
   style?: React.CSSProperties;
@@ -22,8 +22,9 @@ export interface MenuProps {
  * 需要传递给子组件的上下文属性
  */
 interface IMenuContext {
-  index: number;
+  index: number | string;
   onSelect?: SelectCallBack;
+  mode?: MenuMode;
 }
 
 /**
@@ -39,7 +40,7 @@ const Menu: React.FC<MenuProps> = (props) => {
     'menu-horizontal': mode !== "vertical",
   });
 
-  const handleClick = (index: number) => {
+  const handleClick = (index: number | string) => {
     setActive(index);
     onSelect && onSelect(index);
   }
@@ -47,6 +48,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   const passedContext: IMenuContext = {
     index: currentActive ? currentActive : 0,
     onSelect: handleClick,
+    mode,
   }
 
   const renderChildren = () => {
@@ -72,7 +74,7 @@ const Menu: React.FC<MenuProps> = (props) => {
 }
 
 Menu.defaultProps = {
-  defaultIndex: 0,
+  defaultIndex: -1,
   mode: "horizontal"
 }
 
