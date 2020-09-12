@@ -3,6 +3,8 @@ import { MenuContext } from './menu';
 import classnames from 'classnames';
 import MenuItem, { MenuItemProps } from './menuItem';
 import Icon from '../Icon/icon';
+import Transition from "../transition";
+// import Transition from "../transition/transition";
 export interface SubMenuProps {
   index?: number | string;
   title: string;
@@ -14,11 +16,13 @@ const SubMenu: React.FC<SubMenuProps> = ({ index, title, children, className }) 
   const [menuOpen, setOpen] = useState(false);
   const context = useContext(MenuContext);
   const classes = classnames('menu-item submenu-item', className, {
-    'is-active': context.index === index
+    'is-active': context.index === index,
+    'is-opened': menuOpen,
+    'is-vertical': context.mode === 'vertical'
   })
 
   const clickHandler = (e: MouseEvent) => {
-    console.log('click the ',e.currentTarget);
+    console.log('click the ', e.currentTarget);
     e.preventDefault();
     setOpen(!menuOpen);
   }
@@ -56,10 +60,18 @@ const SubMenu: React.FC<SubMenuProps> = ({ index, title, children, className }) 
         console.error('Waring: SubMenu has a child which is not a MenuItem components');
       }
     })
-    return <ul className={subMenuClasses}> {childrenComponents} </ul>
+    return (
+      <Transition
+        in={menuOpen}
+        timeout={300}
+        animation="zoom-in-top"
+      >
+        <ul className={subMenuClasses}> {childrenComponents} </ul>
+      </Transition>
+    )
   }
 
-  const subTitleClasses = classnames('submenu-title',{})
+  const subTitleClasses = classnames('submenu-title', {});
 
   return (
     <li key={index} className={classes} {...hoverEvents}>
