@@ -72,7 +72,7 @@ const SubMenu: React.FC<SubMenuProps> = ({ index, title, children, className }) 
   }
 
   const subTitleClasses = classnames('submenu-title', {});
-
+  
   return (
     <li key={index} className={classes} {...hoverEvents}>
       <div className={subTitleClasses} {...clickEvents}>

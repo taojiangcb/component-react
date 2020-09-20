@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const { buildDir } = require('./paths');
 const build_dev_conf = require('./webpack.config.build.dev.js');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
-const { buildDir } = require('./paths');
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
 const webpack_dev = merge(build_dev_conf, {

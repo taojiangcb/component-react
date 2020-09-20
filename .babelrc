@@ -5,24 +5,39 @@
     "@babel/preset-typescript"
   ],
   "plugins": [
-     ["import",{
-          "libraryName":"antd",
-          "libraryDirectory":"es",
-          "style":"css"
-      }],
-      ["@babel/plugin-syntax-dynamic-import"],
-      ["@babel/plugin-transform-runtime",{
+    '@babel/plugin-transform-react-jsx',
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "libraryDirectory": "es",
+        "style": "css"
+      }
+    ],
+    [
+      "@babel/plugin-syntax-dynamic-import"
+    ],
+    [
+      "@babel/plugin-transform-runtime",
+      {
         "absoluteRuntime": false,
         "corejs": false,
         "helpers": true,
         "regenerator": true,
         "useESModules": false
-      }],
-      ["@babel/plugin-proposal-decorators", {
+      }
+    ],
+    [
+      "@babel/plugin-proposal-decorators",
+      {
         "legacy": true
-      }],
-      ["@babel/plugin-proposal-class-properties", {
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
         "loose": true
-      }]
+      }
+    ]
   ]
 }
