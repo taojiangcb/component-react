@@ -61,18 +61,14 @@ const SubMenu: React.FC<SubMenuProps> = ({ index, title, children, className }) 
       }
     })
     return (
-      <Transition
-        in={menuOpen}
-        timeout={300}
-        animation="zoom-in-top"
-      >
+      <Transition in={menuOpen} timeout={300} animation="zoom-in-top">
         <ul className={subMenuClasses}> {childrenComponents} </ul>
       </Transition>
     )
   }
 
   const subTitleClasses = classnames('submenu-title', {});
-  
+
   return (
     <li key={index} className={classes} {...hoverEvents}>
       <div className={subTitleClasses} {...clickEvents}>

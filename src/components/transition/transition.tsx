@@ -13,17 +13,14 @@ interface TransitionProps extends CSSTransitionProps {
 
 const Transition: React.FC<TransitionProps> = props => {
   const {
-    children, 
+    children,
     classNames,
     animation,
-    wrapper, 
+    wrapper,
     ...resetProps
   } = props;
   return (
-    <CSSTransition
-      classNames={classNames ? classNames : animation}
-      {...resetProps}
-    >
+    <CSSTransition classNames={classNames ? classNames : animation} {...resetProps}>
       {wrapper ? <div>{children}</div> : children}
     </CSSTransition>
   )

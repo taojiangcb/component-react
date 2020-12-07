@@ -30,8 +30,8 @@ type AnchorButtonProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLElemen
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 
 const Button: React.FC<ButtonProps> = (props) => {
-  const {className, btnType, disabled, size, children, href , ...restProps} = props;
-  const classes = ClassNames('btn',className,{
+  const { className, btnType, disabled, size, children, href, ...restProps } = props;
+  const classes = ClassNames('btn', className, {
     [`btn-${btnType}`]: btnType,
     [`btn-${size}`]: size,
     'disabled': (btnType === ButtonType.Link) && disabled
