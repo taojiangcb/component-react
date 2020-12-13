@@ -135,7 +135,7 @@ storybook 是一个开源工具，用于独立开发React Vue 和 Angular 的组
 
 ### 基本用法
 
-- 安装依赖
+#### 安装依赖
 
 ```
 cnpm i @storybook/addon-actions -D
@@ -150,7 +150,7 @@ npm i --save-dev @babel/core
 npm i --save-dev babel-loader
 ```
 
-### 添加 .storybook 文件夹
+#### .storybook 文件夹
 - 新建脚本命令
 .storybook/config.js
 ```
@@ -216,4 +216,8 @@ storiesOf('Button',module)
 npm run storybook
 ```
 
+### Stroybook addon插件系统介绍
+#### Decorator
+
+#### Action
   
