@@ -15,9 +15,9 @@ JS 会阻碍 dom 的构建 css 会阻塞js 的执行 所以可以利用 async �
 - 带有defer的脚本按照他们在页面中出现的顺序依次执行。
 
 DOMContentLoaded
- - 带有async的脚本也许会在页面没有完全下载完之前就加载，这种情况会在脚本很小或本缓存，并且页面很大的情况下发生。	
+ - 带有async的脚本也许会在页面没有完全下载完之前就加载，这种情况会在脚本很小或本缓存，并且页面很大的情况下发生。
  - 带有defer的脚本会在页面加载和解析完毕后执行，刚好在DOMContentLoaded之前执行。
-
+  
 #### readyState
  document.readyState属性给了我们加载的信息，有三个可能的值：
   - loading 加载 - document仍在加载。
@@ -108,6 +108,12 @@ type NativeButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLElemen
 type AnchorButtonProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLElement>;
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 ```
+
+### Omit<T,K>   
+目前的ts版本（3.2及以前）并没有内置Omit，那么Omit是什么呢？开始我对这个Omit也很好奇，在很多开源的实现里都能看到它的身影。Omit本身有省略和删除的意思，那在ts里这个Omit也很有可能有着相似的操作。查了一些资料之后，学习到，Omit确实是用来删除指定成员。
+
+
+
 
 # 测试
 
@@ -220,4 +226,7 @@ npm run storybook
 #### Decorator
 
 #### Action
+
+# 生成文档
+### react-docgen-typescript 
   

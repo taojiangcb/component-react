@@ -8,6 +8,18 @@ module.exports = ({ config }) => {
       loader: 'babel-loader',
     },
     {
+      loader: require.resolve("react-docgen-typescript-loader"),
+      options: {
+        shouldExtractLiteralValuesFromEnum: true,
+        // propFilter: (prop) => {
+        //   if (prop.parent) {
+        //     return !prop.parent.fileName.includes('node_modules')
+        //   }
+        //   return true            
+        // }
+      }
+    },
+    {
       test: /\.(sa|sc|c)ss$/,
       use: [
         "style-loader",

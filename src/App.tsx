@@ -6,6 +6,7 @@ import MenuItem from './components/Menu/menuItem';
 import Menu from './components/Menu/menu';
 import SubMenu from './components/Menu/subMenu';
 import Icon from './components/Icon/icon';
+import Input from './components/Input';
 
 export const App: React.FC = () => {
   return (
@@ -26,13 +27,16 @@ export const App: React.FC = () => {
           <MenuItem>cool link2</MenuItem>
         </Menu>
 
-        {/* <Button onClick={e => { console.log(123) }}>Hello Button</Button>
+        <Button onClick={e => { console.log(123) }}>Hello Button</Button>
         <Button size={ButtonSize.Large}>Large</Button>
         <Button size={ButtonSize.Small}>Small</Button>
         <Button target="_blank" btnType={ButtonType.Link} href="http://www.12306.com">Link Button</Button>
         <Button btnType={ButtonType.Link} disabled href="http://www.12306.com">Link Button</Button>
         <Button btnType={ButtonType.Primary} >Primary Button</Button>
-        <Button btnType={ButtonType.Danger} >Danger Button</Button> */}
+        <Button btnType={ButtonType.Danger} >Danger Button</Button>
+
+        <Input/>
+
         <p>
           Edit <code>src/app.tsx</code> and save to reload.
        </p>
